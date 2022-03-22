@@ -13,3 +13,14 @@ for (let i = 1; i <= 48; i = i + 1) {
   osudi.push(i);
 }
 
+// vypíše nám v console čísla od 1 po 48
+// z osudi vyberiem 7 náhodných čísel
+
+let vybraneCisla = [];
+for (let i = 0; i < 7; i++) {
+  let vyhernyIndex = Math.floor(Math.random() * osudi.length);
+  let vyherneCislo = osudi[vyhernyIndex];
+
+  vybraneCisla.push(vyherneCislo);
+  osudi.splice(vyhernyIndex, 1);
+}

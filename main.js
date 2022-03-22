@@ -7,27 +7,39 @@
 // <span class="cislo">8</span>
 // ... který pak přidej dovnitř prvku <div id="vyherni-cisla">:
 
-let osudi = [];
-let vybraneCisla = [];
-let vyherneCisla = document.querySelector('#vyherni-cisla');
+//let osudi = [];
+//let vybraneCisla = [];
+//let vyherneCisla = document.querySelector('#vyherni-cisla');
 
-for (let i = 1; i <= 49; i = i + 1) {
+/*for (let i = 1; i <= 49; i = i + 1) {
   osudi.push(i);
+}*/
+
+function losuj() {
+  let osudi = [];
+  let vybraneCisla = [];
+  let vyherneCisla = document.querySelector('#vyherni-cisla');
+
+  // vypíše nám v console čísla od 1 po 48
+  for (let i = 1; i <= 49; i = i + 1) {
+    osudi.push(i);
+  };
+
+  // z osudi vyberiem 7 náhodných čísel
+  for (let i = 0; i < 7; i++) {
+    let vyhernyIndex = Math.floor(Math.random() * osudi.length);
+    let vyherneCislo = osudi[vyhernyIndex];
+
+    vybraneCisla.push(vyherneCislo);
+    osudi.splice(vyhernyIndex, 1);
+  };
+
+  //výpis do HTML
+  vyherneCisla.innerHTML = '';
+
+  for (let a = 0; a < vybraneCisla.length; a++) {
+    vyherneCisla.innerHTML += '<span class="cislo">' + vybraneCisla[a] + '</span>';
+  };
 }
 
-// vypíše nám v console čísla od 1 po 48
-// z osudi vyberiem 7 náhodných čísel
-
-for (let i = 0; i < 7; i++) {
-  let vyhernyIndex = Math.floor(Math.random() * osudi.length);
-  let vyherneCislo = osudi[vyhernyIndex];
-
-  vybraneCisla.push(vyherneCislo);
-  osudi.splice(vyhernyIndex, 1);
-}
-
-//výpis do HTML
-
-for (let a = 0; a < vybraneCisla.length; a++) {
-  vyherneCisla.innerHTML += '<span class="cislo">' + vybraneCisla[a] + '</span>';
-}
+//+= skrátený zápis --> i = i + 1 --> i += 1 alebo vyherneCisla.innerHTML += '<span class="cislo">' + vybraneCisla[a] + '</span>'; --> vyherneCisla.innerHTML = vyherneCisla.innerHTML + '<span class="cislo">' + vybraneCisla[a] + '</span>';

@@ -15,7 +15,7 @@
   osudi.push(i);
 }*/
 
-function losuj() {
+/*function losuj() {
   let osudi = [];
   let vybraneCisla = [];
   let vyherneCisla = document.querySelector('#vyherni-cisla');
@@ -40,6 +40,6 @@ function losuj() {
   for (let a = 0; a < vybraneCisla.length; a++) {
     vyherneCisla.innerHTML += '<span class="cislo">' + vybraneCisla[a] + '</span>';
   };
-}
+}*/
 
 //+= skrátený zápis --> i = i + 1 --> i += 1 alebo vyherneCisla.innerHTML += '<span class="cislo">' + vybraneCisla[a] + '</span>'; --> vyherneCisla.innerHTML = vyherneCisla.innerHTML + '<span class="cislo">' + vybraneCisla[a] + '</span>';
